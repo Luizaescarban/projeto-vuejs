@@ -1,10 +1,14 @@
 <script setup>
-import {ref} from "vue"
+import {ref, onMounted} from "vue"
 const contador = ref(0)
 
 function decrementar(){
   contador.value--
 }
+onMounted (() => {
+  console.log(`O valor inicial do contador é ${contador.value}`)
+})
+function 
 </script>
 
 <template>
@@ -14,5 +18,12 @@ function decrementar(){
 </template>
 
 <style scoped>
+
+button{
+  font-weight: bold;
+  background-color: blue;
+  color: white;
+  border: 0;
+}
 
 </style>
