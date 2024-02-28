@@ -1,19 +1,29 @@
 <script setup>
 import {ref, onMounted} from "vue"
-const contador = ref(0)
+const contador = ref(0);
 
+function incrementar() {
+  contador.value ++;
+}
 function decrementar(){
-  contador.value--
+  if (contador.value > 0) {
+    contador.value --;
+  }
+}
+
+function reiniciar (){
+  contador.value = 0;
 }
 onMounted (() => {
   console.log(`O valor inicial do contador é ${contador.value}`)
 })
-function 
+
 </script>
 
 <template>
-  <button @click="contador++">+</button>
+  <button @click="incrementar">+</button>
   <button @click="decrementar">-</button>
+  <button @click="reiniciar">Reiniciar</button>
   <p>Valor do contador: {{ contador }}</p>
 </template>
 
